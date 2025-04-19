@@ -1,0 +1,63 @@
+# Logs
+/frontend/medmap/logs
+/frontend/medmap/*.log
+/frontend/medmap/npm-debug.log*
+/frontend/medmap/yarn-debug.log*
+/frontend/medmap/yarn-error.log*
+/frontend/medmap/pnpm-debug.log*
+/frontend/medmap/lerna-debug.log*
+
+/frontend/medmap/node_modules
+/frontend/medmap/dist
+/frontend/medmap/dist-ssr
+/frontend/medmap/*.local
+
+# Editor directories and files
+/frontend/medmap/.vscode/*
+/frontend/medmap/!.vscode/extensions.json
+/frontend/medmap/.idea
+/frontend/medmap/.DS_Store
+/frontend/medmap/*.suo
+/frontend/medmap/*.ntvs*
+/frontend/medmap/*.njsproj
+/frontend/medmap/*.sln
+/frontend/medmap/*.sw?
+
+
+# Contentlayer
+/frontend/medmap/.contentlayer
+
+
+/backend/medmap/HELP.md
+/backend/medmap/target/
+/backend/medmap/!.mvn/wrapper/maven-wrapper.jar
+/backend/medmap/!**/src/main/**/target/
+/backend/medmap/!**/src/test/**/target/
+
+### STS ###
+/backend/medmap/.apt_generated
+/backend/medmap/.classpath
+/backend/medmap/.factorypath
+/backend/medmap/.project
+/backend/medmap/.settings
+/backend/medmap/.springBeans
+/backend/medmap/.sts4-cache
+
+### IntelliJ IDEA ###
+/backend/medmap/.idea
+/backend/medmap/*.iws
+/backend/medmap/*.iml
+/backend/medmap/*.ipr
+
+### NetBeans ###
+/backend/medmap/nbproject/private/
+/backend/medmap/nbbuild/
+/backend/medmap/dist/
+/backend/medmap/nbdist/
+/backend/medmap/.nb-gradle/
+/backend/medmap/build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+/backend/medmap/.vscode/
