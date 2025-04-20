@@ -21,4 +21,5 @@ public class UserResponseDTO {
     private LocalDateTime registrationDate;
     private UserType userType;
     private AddressDTO address;
+    private String obs;
 }

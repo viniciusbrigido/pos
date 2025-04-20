@@ -21,6 +21,7 @@ public class AuthResponseDTO {
     private String cpf;
     private String phone;
     private AddressDTO address;
+    private String obs;
 
     public static AuthResponseDTO fromUser(User user, String token) {
         return builder()
@@ -32,6 +33,7 @@ public class AuthResponseDTO {
                 .id(user.getId())
                 .cpf(user.getCpf())
                 .phone(user.getPhone())
+                .obs(user.getObs())
                 .address(AddressDTO.fromAddress(user.getAddress()))
                 .token(token)
                 .build();

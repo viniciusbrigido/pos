@@ -5,7 +5,9 @@ import {
   VStack,
   Accordion,
   Span,
-  Text, Button
+  Text,
+  Button,
+  Textarea
 } from '@chakra-ui/react';
 import { withMask } from 'use-mask-input';
 import { useEffect, useRef, useState } from 'react';
@@ -17,6 +19,7 @@ import { getAddressByZipCode } from '../../services/viaCepService.js';
 export default function UserForm({
   user,
   changePassword,
+  changeObs,
   onCancel,
   onSave,
   userType,
@@ -28,7 +31,7 @@ export default function UserForm({
       loadUser();
     }
 
-  }, [user, changePassword, onCancel, onSave]);
+  }, [user, changePassword, changeObs, onCancel, onSave]);
 
   const cpfRef = useRef(null);
   const phoneRef = useRef(null);
@@ -39,6 +42,7 @@ export default function UserForm({
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [obs, setObs] = useState('');
 
   const [zipCode, setZipCode] = useState('');
   const [street, setStreet] = useState('');
@@ -52,9 +56,11 @@ export default function UserForm({
     if (!user) {
       return;
     }
+    console.log('user', user);
     setName(user.name || '');
     setCpf(user.cpf || '');
     setPhone(user.phone || '');
+    setObs(user.obs || '');
     setEmail(user.email || '');
     setZipCode(user.address?.zipCode || '');
     setStreet(user.address?.street || '');
@@ -94,6 +100,7 @@ export default function UserForm({
       name,
       cpf: onlyNumbers(cpf),
       phone: onlyNumbers(phone),
+      obs,
       email,
       userType: user?.id ? user.userType : userType,
       password: user?.id ? user.password : password,
@@ -176,6 +183,16 @@ export default function UserForm({
             onChange={(e) => setPassword(e.target.value)}
           />
           {errors.password && <Text color="red.500" fontSize="sm">{errors.password}</Text>}
+        </Field.Root>
+      )}
+
+      {changeObs && (
+        <Field.Root width="450px">
+          <Field.Label>Observações</Field.Label>
+          <Textarea
+            value={obs}
+            onChange={(e) => setObs(e.target.value)}
+          />
         </Field.Root>
       )}
 

@@ -1,6 +1,5 @@
 package br.com.cargidoso.medmap.entity;
 
-import br.com.cargidoso.medmap.dto.address.AddressDTO;
 import br.com.cargidoso.medmap.dto.user.UserUpdateDTO;
 import br.com.cargidoso.medmap.enumeration.UserType;
 import jakarta.persistence.*;
@@ -47,9 +46,12 @@ public class User {
     @Embedded
     private Address address;
 
+    private String obs;
+
     public void update(UserUpdateDTO userUpdateDTO) {
         name = ofNullable(userUpdateDTO.getName()).orElse(name);
         phone = ofNullable(userUpdateDTO.getPhone()).orElse(phone);
+        obs = ofNullable(userUpdateDTO.getObs()).orElse(obs);
         address.update(userUpdateDTO.getAddress());
     }
 

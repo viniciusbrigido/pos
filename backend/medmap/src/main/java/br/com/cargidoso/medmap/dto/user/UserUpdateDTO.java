@@ -16,4 +16,6 @@ public class UserUpdateDTO {
     private String phone;
 
     private AddressDTO address;
+
+    private String obs;
 }

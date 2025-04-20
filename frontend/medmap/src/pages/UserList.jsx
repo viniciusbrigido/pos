@@ -24,7 +24,7 @@ export default function User({
 
   useEffect(() => {
     loadUsers();
-  }, []);
+  }, [userType, entityLabel]);
 
   const { onClose } = useDisclosure();
   const [open, setOpen] = useState(false);
@@ -114,6 +114,7 @@ export default function User({
                 <UserForm
                   user={user}
                   changePassword={!user?.id}
+                  changeObs={userType === 'PATIENT'}
                   onCancel={handleClose}
                   onSave={onSuccessCreateOrUpdate}
                   userType={userType}

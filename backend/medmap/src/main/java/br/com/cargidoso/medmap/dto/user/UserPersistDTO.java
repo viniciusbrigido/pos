@@ -32,4 +32,6 @@ public class UserPersistDTO {
     private UserType userType;
 
     private AddressDTO address;
+
+    private String obs;
 }

@@ -42,6 +42,7 @@ export default function Profile() {
           <UserForm
             onSave={validateToken}
             user={user}
+            changeObs={user?.userType === 'PATIENT'}
             changePassword={false}
             entityLabel={'Perfil'}
           />
